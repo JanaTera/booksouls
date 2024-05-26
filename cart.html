@@ -1,0 +1,438 @@
+<html>
+<head>
+  <title>cart</title>
+  <link rel="stylesheet" href="bootstrap.min.css">
+  <script src="script.js"></script>
+  <style>
+    .item-container{
+    display: flex;
+    flex-direction: row;
+    
+    
+    justify-content: center;
+    align-items: center;
+    gap: 0px 10%;
+    padding: 0px 20px 40px 20px;
+    margin: auto;
+    border-bottom: 1px solid rgb(37, 59, 110, 0.5);
+}
+@media(max-width:1000px){
+  .item-container{
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto auto;
+    gap: auto;
+    align-content: center;
+  }
+  .item-description-img{
+    grid-row-start: 1;
+    grid-row-end: 4;
+  }
+}
+.item-description-img{
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    
+
+}
+.cart-item-img {
+    height: 320px;
+    width: 220px;
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    overflow: hidden;
+    display: flex;
+}
+.cart-item-img img{
+    width: 100%;
+    height: 100%;
+    
+}
+
+
+
+
+.description {
+    margin-top: 15%;
+}
+
+.description h1 {
+    font-size: 32px;
+    font-weight: 400;
+    color: #1f5f8b;
+    inline-size: 250px;
+    overflow-wrap: break-word;
+}
+
+.description p {
+    margin-top: 5px;
+    font-size: 25px;
+    font-weight: 300;
+    color: #1f5f8b;
+}
+
+
+
+.price p {
+    font-size: 30px;
+    font-weight: 400;
+    color: #1f5f8b;
+}
+
+/* .count{
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+} */
+.delete button{
+    border: none;
+    font-size: 30px;
+    background-color: transparent;
+    color: red;
+    cursor: pointer;
+}
+.increment-decrement form{
+    display: flex;
+    align-items: center;
+    width: 100px;
+    gap: 10px;
+  }
+  .increment-decrement form p{
+    font-size: 24px;
+    font-weight: 500;
+    background-color: transparent;
+  }
+
+  .increment-decrement input {
+    flex: 1;
+    width: 15px;
+    margin: 0 5px;
+    padding: 5px 10px;
+    font-size: 16px;
+    text-align: center;
+    border: none;
+    border-radius: 4px;
+    outline: none;
+    color: black;
+    background-color: transparent;
+    display: none;
+  }
+  .increment-decrement input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  .increment-decrement button {
+    margin: 5px 0;
+    padding: 5px 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    background-color: transparent;
+    cursor: pointer;
+  }
+
+  .increment-decrement .button-group button:hover {
+    background-color: transparent;
+  }
+  footer {
+    background-color: #253b6e;
+  }
+  .footer-top {
+    padding-top: 50px;
+    width: 98vw;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 20% auto auto auto  20%;
+    gap: 5% ;
+    row-gap: 15%;
+    padding: 50px 3%;
+  }
+  .footer-top h1 {
+    text-align: left;
+    font-size: 64px;
+    line-height: 60px;
+    font-weight: 400;
+  }
+  .footer-top h1 span {
+    position: relative;
+    /* border: solid red 1px; */
+    text-align: center;
+  
+    color: #253b6e;
+    -webkit-text-stroke: 1px #d2ecf9;
+  
+    font-weight: 600;
+  }
+  .footer-top h1 img {
+    width: 13px;
+    margin-top: 5.2px;
+    margin-left: 2.5px;
+    color: #1891ac;
+    position: absolute;
+    z-index: 100;
+  }
+  .stay-in-touch {
+    justify-self: end;
+  }
+  .footer-top > * {
+    color: #d2ecf9;
+  }
+  .footer-top .col {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .footer-top .col h3 {
+    font-size: 2em;
+    font-weight: 500;
+    margin-bottom: 10px;
+  }
+  #logop {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 10px;
+    opacity: 0.7;
+  }
+  .footer-top .col p {
+    font-size: 1em;
+    opacity: 0.7;
+    font-weight: 200;
+  }
+  .email-bar{
+    display: flex;
+    gap: 0;
+  }
+  .email-bar input {
+    background: transparent;
+    border: 1px solid #d2ecf9;
+    font-size: 18px;
+    margin-right: 0;
+    outline: none;
+    color: #d2ecf9;
+    width: 150px;
+    height: 50px;
+    position: relative;
+    color: #d2ecf9;
+    padding-left: 10px;
+  }
+  .email-bar input:focus::placeholder {
+    color: transparent;
+  }
+  .email-bar input::placeholder {
+    color: #d2ecf9;
+    font-size: 18px;
+    opacity: 0.7;
+    font-weight: 400;
+  }
+  .email-bar button {
+    display: inline;
+    min-width: 50px;
+    height: 50px;
+    /* position: absolute; */
+    /* right: 101px; */
+    border: none;
+    font-size: 21px;
+    font-weight: 500;
+    background-color: #d2ecf9;
+    color: #253b6e;
+  }
+  .payment-methods {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  .payment-methods img {
+    width: 350px;
+  }
+  .footer-bottom {
+    padding-bottom: 50px;
+    width: 90%;
+    margin: auto;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .footer-bottom p {
+    color: #d2ecf9;
+    font-size: 20px;
+    font-weight: 200;
+  }
+  .footer-bottom .fa-regular {
+    font-size: 17px;
+    font-weight: 200;
+  }
+  .footer-bottom img {
+    width: 90px;
+  }
+  #StayInTouch{
+    position: absolute;
+    right: 1%;
+  }
+  @media (max-width:1060px) {
+    #StayInTouch{
+      display: none;
+    }
+    .footer-top{
+      grid-template-columns: 20% auto auto auto ;
+    } 
+  }
+  @media (max-width:950px) {
+    .footer-top .col h3{
+      font-size: 1.8em;
+    }
+    .footer-top .col p{
+      font-size: 0.9em;
+    }
+  }
+  @media (max-width:850px) {
+    .footer-top .col h3{
+      font-size: 1.7em;
+    }
+    .footer-top .col p{
+      font-size: 0.8em;
+    }
+  }
+  @media (max-width:830px) {
+    .footer-top{
+      grid-template-columns: 30% auto auto ;
+      grid-template-rows: auto ;
+    }
+    .bookSoulsTitle{
+      grid-row-start: 1;
+      grid-row-end: 2;
+    } 
+    .item3{
+      grid-column-start: 2;
+      grid-column-end: 3;
+    }
+    
+  }
+  @media (max-width:650px) {
+    .footer-top{
+      grid-template-columns: auto auto ;
+      grid-template-rows: auto auto ;
+    }
+    .footer-bottom p{
+      font-size: 14px;
+    }
+  }
+  </style>
+</head>
+<body>
+  <!--Navigation Bar -------------------------------------------- -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">
+        <img src="images.png" width="50" height="30" class="d-inline-block align-top" alt="">
+        Book Souls
+      </a>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item  ">
+          <a class="nav-link" href="1stpage.html">Home </a>
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link" href="signin.html">Sign In</a>
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link" href="Registration.html">Register</a>
+      </li> 
+        <li class="nav-item">
+            <a class="nav-link" href="featured.html">Featured</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="books.html">Books <span class="sr-only">(current)</span></a>
+      </li>
+    </li>
+      <li class="nav-item ">
+        <a class="nav-link" href="cart.html">Cart</a>
+    </li>
+      </ul>
+    </div>
+  </nav>
+  <!--End of Navigation ------------------------------------------------------ -->
+
+
+  <div class="media">
+    <div class="media-body">
+        <br><br><br><br><br><br><br>
+        <h1 class="mt-0">You Like It Darker</h1>
+        <p>"You Like It Darker" is a gripping collection of short stories by the master of horror, Stephen King. Each story delves into the depths of human fear, exploring the dark corners of the human psyche. From eerie encounters to unsettling mysteries, King masterfully weaves narratives that will keep readers on the edge of their seats. This collection showcases King's unparalleled ability to create suspense and evoke a sense of dread, making it a must-read for fans of the horror genre.</p>
+    </div>
+    <img src="New folder/King.jpg" class="mr-3" alt="" style="height: 400px; width: 300px;">
+</div>
+
+<div class="media">
+    <img src="New folder/ReadPeople.jpg" class="mr-3" alt="" style="width: 400px; height: 400px;">
+    <div class="media-body">
+        <br><br><br><br><br>
+        <h1 class="mt-0">Read People Like a Book</h1>
+        <p>"Read People Like a Book" by Patrick King is a comprehensive guide to understanding and interpreting human behavior and body language. This insightful book delves into the nuances of non-verbal communication, helping readers uncover the hidden meanings behind people's actions and gestures. Through practical examples and easy-to-follow techniques, King equips readers with the tools to accurately read others, enhancing interpersonal relationships and communication skills. Whether for personal or professional use, this book offers valuable strategies to decode and understand the thoughts and emotions of those around you.</p>
+    </div>
+</div>
+
+<div class="media">
+    <div class="media-body">
+        <br><br><br><br><br><br><br>
+        <h1 class="mt-0">Subtitle Art of Not Givining Up</h1>
+        <p>"The Subtle Art of Not Giving a F*ck" by Mark Manson is a bold and refreshing self-help guide that challenges conventional wisdom about happiness and success. Manson argues that the key to a good life is not caring about more things, but rather focusing on what truly matters. Through candid anecdotes and blunt humor, he emphasizes the importance of embracing life's challenges, accepting personal responsibility, and choosing values that align with one's true self. By advocating for selective concern, Manson offers a counterintuitive approach to living a more meaningful and fulfilling life.</p>
+    </div>
+    <img src="New folder/Subtle.jpg" class="mr-3" alt="" style="width: 400px; height: 400px;">
+</div>
+
+<div class="media">
+  <img src="New folder/TheFamilyStairs.jpg" class="mr-3" alt="" style="width: 400px; height: 500px;">
+  <div class="media-body">
+      <br><br><br><br><br>
+      <h1 class="mt-0">The Family Upstairs</h1>
+      <p>"The Family Upstairs" by Lisa Jewell is a gripping psychological thriller that unravels a dark and twisted family saga. The story begins when Libby Jones inherits a mansion in a posh London neighborhood on her 25th birthday, only to discover that it harbors a chilling secret. The house was once the scene of a mysterious tragedy involving two families and three dead bodies. As Libby delves into the past, she uncovers the sinister history of the house and its former inhabitants, leading her to unexpected and shocking revelations. With its intricate plot and compelling characters, "The Family Upstairs" keeps readers on the edge of their seats from start to finish.</p>
+  </div>
+</div>
+
+
+<footer>
+    <div class="footer-top">
+      <div class="col bookSoulsTitle">
+        <h1>
+          <img src="../../assets/images/Vector_1.svg" alt="" /><span>B</span>ook
+          <br />
+          Souls
+        </h1>
+        <p id="logop">Get Engulphed and Explore a New <br />Magical World</p>
+      </div>
+      <div class="col item1">
+        <h3>ABOUT</h3>
+        <p>About Us</p>
+        <p>Terms & Privacy</p>
+        <p>Refund Policy</p>
+      </div>
+      <div class="col item2">
+        <H3>CUSTOMER CARE</H3>
+        <p>Contact Us</p>
+        <p>Shipping</p>
+        <p>FAQ</p>
+      </div>
+      <div class="col item3">
+        <H3>OTHER</H3>
+        <p>Gift Cards</p>
+        <p>Media</p>
+        <p>Backgrounds</p>
+      </div>
+      
+      </div>
+    </div>
+    <div class="payment-methods">
+    </div>
+    <div class="footer-bottom">
+      <p>
+        Copyright <fa-icon [icon]="faCopyright"></fa-icon> Book Souls Inc. All
+        rights reserved
+      </p>
+    </div>
+  </footer>
+  </body>
+  </html>

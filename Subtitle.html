@@ -1,0 +1,333 @@
+<html>
+<head>
+  <title>books</title>
+  <link rel="stylesheet" href="bootstrap.min.css">
+  <script src="script.js"></script>
+  <style>
+    .shopping-cart {
+    padding: 50px 100px;
+    background-color: #d2ecf9;
+}
+
+.cart h1 {
+    text-align: left;
+    color: #1f5f8b;
+    font-weight: 500;
+    font-size: 40px;
+}
+
+.cart {
+    border-bottom: 1px solid rgba(31, 95, 139, 0.3);
+}
+
+.item {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 60px;
+}
+
+.checkout {
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    align-items: center;
+}
+
+.checkout_btn {
+    background: linear-gradient(90deg,#1891AC,#188FAB,#1A84A4,#1C779B);
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 25px;
+    border: none;
+    font-weight: 450;
+    font-size: 40px;
+    color: #d2ecf9;
+    padding: 5px 40px;
+    text-align: center;
+    margin: auto;
+    cursor: pointer;
+}
+.no-products{
+    text-align: center;
+    color: #1f5f8b;
+    font-size: 42px;
+    font-weight: 400;
+    margin: 25% auto;
+    user-select: none;
+}
+footer {
+    background-color: #253b6e;
+  }
+  .footer-top {
+    padding-top: 50px;
+    width: 98vw;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 20% auto auto auto  20%;
+    gap: 5% ;
+    row-gap: 15%;
+    padding: 50px 3%;
+  }
+  .footer-top h1 {
+    text-align: left;
+    font-size: 64px;
+    line-height: 60px;
+    font-weight: 400;
+  }
+  .footer-top h1 span {
+    position: relative;
+    /* border: solid red 1px; */
+    text-align: center;
+  
+    color: #253b6e;
+    -webkit-text-stroke: 1px #d2ecf9;
+  
+    font-weight: 600;
+  }
+  .footer-top h1 img {
+    width: 13px;
+    margin-top: 5.2px;
+    margin-left: 2.5px;
+    color: #1891ac;
+    position: absolute;
+    z-index: 100;
+  }
+  .stay-in-touch {
+    justify-self: end;
+  }
+  .footer-top > * {
+    color: #d2ecf9;
+  }
+  .footer-top .col {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .footer-top .col h3 {
+    font-size: 2em;
+    font-weight: 500;
+    margin-bottom: 10px;
+  }
+  #logop {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 10px;
+    opacity: 0.7;
+  }
+  .footer-top .col p {
+    font-size: 1em;
+    opacity: 0.7;
+    font-weight: 200;
+  }
+  .email-bar{
+    display: flex;
+    gap: 0;
+  }
+  .email-bar input {
+    background: transparent;
+    border: 1px solid #d2ecf9;
+    font-size: 18px;
+    margin-right: 0;
+    outline: none;
+    color: #d2ecf9;
+    width: 150px;
+    height: 50px;
+    position: relative;
+    color: #d2ecf9;
+    padding-left: 10px;
+  }
+  .email-bar input:focus::placeholder {
+    color: transparent;
+  }
+  .email-bar input::placeholder {
+    color: #d2ecf9;
+    font-size: 18px;
+    opacity: 0.7;
+    font-weight: 400;
+  }
+  .email-bar button {
+    display: inline;
+    min-width: 50px;
+    height: 50px;
+    /* position: absolute; */
+    /* right: 101px; */
+    border: none;
+    font-size: 21px;
+    font-weight: 500;
+    background-color: #d2ecf9;
+    color: #253b6e;
+  }
+  .payment-methods {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  .payment-methods img {
+    width: 350px;
+  }
+  .footer-bottom {
+    padding-bottom: 50px;
+    width: 90%;
+    margin: auto;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .footer-bottom p {
+    color: #d2ecf9;
+    font-size: 20px;
+    font-weight: 200;
+  }
+  .footer-bottom .fa-regular {
+    font-size: 17px;
+    font-weight: 200;
+  }
+  .footer-bottom img {
+    width: 90px;
+  }
+  #StayInTouch{
+    position: absolute;
+    right: 1%;
+  }
+  @media (max-width:1060px) {
+    #StayInTouch{
+      display: none;
+    }
+    .footer-top{
+      grid-template-columns: 20% auto auto auto ;
+    } 
+  }
+  @media (max-width:950px) {
+    .footer-top .col h3{
+      font-size: 1.8em;
+    }
+    .footer-top .col p{
+      font-size: 0.9em;
+    }
+  }
+  @media (max-width:850px) {
+    .footer-top .col h3{
+      font-size: 1.7em;
+    }
+    .footer-top .col p{
+      font-size: 0.8em;
+    }
+  }
+  @media (max-width:830px) {
+    .footer-top{
+      grid-template-columns: 30% auto auto ;
+      grid-template-rows: auto ;
+    }
+    .bookSoulsTitle{
+      grid-row-start: 1;
+      grid-row-end: 2;
+    } 
+    .item3{
+      grid-column-start: 2;
+      grid-column-end: 3;
+    }
+    
+  }
+  @media (max-width:650px) {
+    .footer-top{
+      grid-template-columns: auto auto ;
+      grid-template-rows: auto auto ;
+    }
+    .footer-bottom p{
+      font-size: 14px;
+    }
+  }
+  </style>
+</head>
+<body>
+   <!--Navigation Bar -------------------------------------------- -->
+   <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">
+        <img src="images.png" width="50" height="30" class="d-inline-block align-top" alt="">
+        Book Souls
+      </a>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item  ">
+          <a class="nav-link" href="1stpage.html">Home </a>
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link" href="signin.html">Signin</a>
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link" href="Registration.html">Register</a>
+      </li> 
+        <li class="nav-item">
+            <a class="nav-link" href="featured.html">Featured</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="books.html">Books  <span class="sr-only">(current)</span></a>
+      </li>
+    </li>
+      <li class="nav-item ">
+        <a class="nav-link" href="cart.html">Cart</a>
+    </li>
+      </ul>
+    </div>
+  </nav>
+  <!--End of Navigation ------------------------------------------------------ -->
+  <br><br><br><br><br><br>
+
+  <div class="media">
+    <div class="media-body">
+        <br><br><br><br><br><br><br>
+        <h1 class="mt-0">Subtitle Art of Not Givining Up</h1>
+        <p>"The Subtle Art of Not Giving a F*ck" by Mark Manson is a bold and refreshing self-help guide that challenges conventional wisdom about happiness and success. Manson argues that the key to a good life is not caring about more things, but rather focusing on what truly matters. Through candid anecdotes and blunt humor, he emphasizes the importance of embracing life's challenges, accepting personal responsibility, and choosing values that align with one's true self. By advocating for selective concern, Manson offers a counterintuitive approach to living a more meaningful and fulfilling life.</p>
+        <button class="buy-button btn btn-primary">Buy Now</button>
+    </div>
+    <img src="New folder/Subtle.jpg" class="mr-3" alt="" style="width: 400px; height: 500px;">
+</div>
+<br><br><br><br><br><br>
+
+<footer>
+  <div class="footer-top">
+    <div class="col bookSoulsTitle">
+      <h1>
+        <img src="../../assets/images/Vector_1.svg" alt="" /><span>B</span>ook
+        <br />
+        Souls
+      </h1>
+      <p id="logop">Get Engulphed and Explore a New <br />Magical World</p>
+    </div>
+    <div class="col item1">
+      <h3>ABOUT</h3>
+      <p>About Us</p>
+      <p>Terms & Privacy</p>
+      <p>Refund Policy</p>
+    </div>
+    <div class="col item2">
+      <H3>CUSTOMER CARE</H3>
+      <p>Contact Us</p>
+      <p>Shipping</p>
+      <p>FAQ</p>
+    </div>
+    <div class="col item3">
+      <H3>OTHER</H3>
+      <p>Gift Cards</p>
+      <p>Media</p>
+      <p>Backgrounds</p>
+    </div>
+    
+    </div>
+  </div>
+  <div class="payment-methods">
+  </div>
+  <div class="footer-bottom">
+    <p>
+      Copyright <fa-icon [icon]="faCopyright"></fa-icon> Book Souls Inc. All
+      rights reserved
+    </p>
+  </div>
+</footer>
+</body>
+</html>
